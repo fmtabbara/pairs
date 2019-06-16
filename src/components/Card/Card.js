@@ -1,7 +1,6 @@
 import * as React from 'react'
 import classNames from 'classnames'
-import './styles.scss'
-import { callbackify } from 'util'
+import './styles.css'
 
 export const Card = ({ flip, image, name, callback, index }) => {
   const handleClick = () => {
@@ -9,7 +8,7 @@ export const Card = ({ flip, image, name, callback, index }) => {
   }
 
   return (
-    <>
+    <div>
       <div
         onClick={handleClick}
         className={classNames('card', { cardFlip: flip })}
@@ -20,6 +19,6 @@ export const Card = ({ flip, image, name, callback, index }) => {
         />
         <div className="cardBack" />
       </div>
-    </>
+    </div>
   )
 }

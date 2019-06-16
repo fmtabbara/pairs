@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Board } from "./components/Board/Board";
 import { Title } from "./components/Title/Title";
-import "./styles.scss";
+import "./styles.css";
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Card } from '../Card/Card'
 import { randomDeck } from '../helperFunctions/createCardsArray'
-import './styles.scss'
+import './styles.css'
 
 export const Board = () => {
   const deck = randomDeck()
@@ -11,6 +11,7 @@ export const Board = () => {
   const [matchedCards, handleMatchedCards] = React.useState([])
   const [currentCard, handleCurrentCard] = React.useState([])
   const [lockBoard, handleLockBoard] = React.useState(false)
+
   const callback = (name, index) => {
     if (checkFlipped !== 1) {
       handleCheckFlipped(checkFlipped + 1)
@@ -32,7 +33,7 @@ export const Board = () => {
         setTimeout(() => {
           handleFlip([])
           handleLockBoard(false)
-        }, 2000)
+        }, 1500)
       }
     }
   }
