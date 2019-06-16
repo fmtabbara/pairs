@@ -27,11 +27,6 @@ export const frontFaces = [
       "https://static.comicvine.com/uploads/original/11/118689/2692355-2634833_tumblr_mb69ssv0nf1qiknbco1_1280.jpg"
   },
   {
-    name: "thanos",
-    img:
-      "https://steemitimages.com/DQmdK9AuFKQxt79KzSKTYiHCHQJ4QgC2JuAWz2XQAvC32W3/infinity.jpg"
-  },
-  {
     name: "vision",
     img:
       "https://i.pinimg.com/originals/9a/12/a5/9a12a57ee09f892c93372761715861b6.jpg"

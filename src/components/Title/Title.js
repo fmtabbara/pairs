@@ -6,7 +6,6 @@ export const Title = () => {
       P
       <img src="http://pluspng.com/img-png/avengers-logo-png-combatants-1000.png" />
       irs
-      <span>- A game for Felix Tabbara</span>
     </div>
   );
 };

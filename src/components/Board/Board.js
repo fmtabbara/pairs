@@ -11,7 +11,10 @@ export const Board = () => {
   const [matchedCards, handleMatchedCards] = React.useState([])
   const [currentCard, handleCurrentCard] = React.useState([])
   const [lockBoard, handleLockBoard] = React.useState(false)
-
+  const handleReset = () => {
+    handleFlip([])
+    handleMatchedCards([])
+  }
   const callback = (name, index) => {
 
     handleFlip([...flip, index])
@@ -41,6 +44,7 @@ export const Board = () => {
   }
   return (
     <div className="board">
+      <button onClick={handleReset}>Re-engage</button>
       {deck.map(({ name, img }, index) => {
         return (
           <Card

@@ -1,22 +1,44 @@
 .board {
-  width: calc(100px * 7);
+  width: calc(80px * 5);
+  min-width: 250px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  overflow: hidden;
   padding: 15px;
+}
+
+.board button{
+  position: absolute;
+  bottom:-25px;
+  left:calc(50% - 40px);
+  background: white;
+  color:red;
+  border: none;
+  padding:5px;
+  margin:3px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 800;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.2s, background 0.2s;
+}
+
+.board button:hover {
+  color:white;
+  background: red;
 }
 
 @media screen and (max-width: 768px) {
   .board{
-    width: calc(75px * 7);
+    width: calc(75px * 5);
   }
 }
 
 @media screen and (max-width: 600px) {
   .board{
-    width: calc(55px * 7);
+    width: calc(55px * 5);
   }
 }
