@@ -1,0 +1,22 @@
+.board {
+  width: calc(100px * 7);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .board{
+    width: calc(75px * 7);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .board{
+    width: calc(55px * 7);
+  }
+}
