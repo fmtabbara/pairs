@@ -13,27 +13,29 @@ export const Board = () => {
   const [lockBoard, handleLockBoard] = React.useState(false)
 
   const callback = (name, index) => {
-    if (checkFlipped !== 1) {
-      handleCheckFlipped(checkFlipped + 1)
-    } else {
-      handleCheckFlipped(0)
-    }
 
+    handleFlip([...flip, index])
+    handleCurrentCard({ name, index })
+    handleCheckFlipped(1)
+
+    
     if (checkFlipped === 0) {
       handleFlip([...flip, index])
       handleCurrentCard({ name, index })
-    } else if (checkFlipped === 1) {
-      handleFlip([...flip, index])
+    } else if (checkFlipped === 1 && index !== currentCard.index) {
       handleLockBoard(true)
-      if (currentCard.name === name) {
+      handleFlip([...flip, index])
+      if (currentCard.name === name && currentCard.index !== index) {
         handleMatchedCards([...matchedCards, index, currentCard.index])
         handleFlip([])
+        handleCheckFlipped(0)
         handleLockBoard(false)
       } else {
         setTimeout(() => {
           handleFlip([])
+          handleCheckFlipped(0)
           handleLockBoard(false)
-        }, 1500)
+        }, 1000)
       }
     }
   }
@@ -46,7 +48,7 @@ export const Board = () => {
             key={index}
             name={name}
             image={img}
-            callback={lockBoard ? '' : callback}
+            callback={lockBoard ? () => '' : callback}
             flip={flip.includes(index) || matchedCards.includes(index)}
           />
         )
