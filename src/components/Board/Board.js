@@ -4,16 +4,23 @@ import { randomDeck } from '../helperFunctions/createCardsArray'
 import './styles.css'
 
 export const Board = () => {
-  const deck = randomDeck()
 
+  const [newDeck, handleNewDeck] = React.useState(randomDeck())
   const [flip, handleFlip] = React.useState([])
   const [checkFlipped, handleCheckFlipped] = React.useState(0)
   const [matchedCards, handleMatchedCards] = React.useState([])
   const [currentCard, handleCurrentCard] = React.useState([])
   const [lockBoard, handleLockBoard] = React.useState(false)
+
   const handleReset = () => {
+    handleLockBoard(true)
     handleFlip([])
     handleMatchedCards([])
+    handleCheckFlipped(0)
+    setTimeout(() => {
+      handleNewDeck(randomDeck())
+      handleLockBoard(false)
+    },500)
   }
   const callback = (name, index) => {
 
@@ -45,7 +52,7 @@ export const Board = () => {
   return (
     <div className="board">
       <button onClick={handleReset}>Re-engage</button>
-      {deck.map(({ name, img }, index) => {
+      {newDeck.map(({ name, img }, index) => {
         return (
           <Card
             index={index}
