@@ -6,7 +6,7 @@ import { PlayerWin } from './components/PlayerWin/PlayerWin'
 import "./styles.css";
 
 function App() {
-  const [playerWin, handlePlayerWin] = React.useState(true)
+  const [playerWin, handlePlayerWin] = React.useState(false)
   const callback = () => handlePlayerWin(true);
   const gameResetCallback = () => {
     handlePlayerWin(false)
