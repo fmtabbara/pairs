@@ -3,14 +3,9 @@
   height:120px;
   margin:5px;
   cursor: pointer;
-  transform: scale(1);
   transition: transform 0.4s;
   perspective: 3000px;
   transform-style: preserve-3d;
-}
-
-.card:hover {
-  transform: scale(1.05);
 }
 
 .cardFront, .cardBack {
@@ -33,10 +28,6 @@
 }
 .cardFlip{
   transform: rotateY(180deg);
-}
-
-.cardFlip:hover{
-  transform: rotateY(180deg)
 }
 
 @media screen and (max-width: 768px) {

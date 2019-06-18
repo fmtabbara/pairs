@@ -3,7 +3,7 @@ import { Card } from '../Card/Card'
 import { randomDeck } from '../helperFunctions/createCardsArray'
 import './styles.css'
 
-export const Board = () => {
+export const Board = ({playerWinCallback}) => {
 
   const [newDeck, handleNewDeck] = React.useState(randomDeck())
   const [flip, handleFlip] = React.useState([])
@@ -11,6 +11,7 @@ export const Board = () => {
   const [matchedCards, handleMatchedCards] = React.useState([])
   const [currentCard, handleCurrentCard] = React.useState([])
   const [lockBoard, handleLockBoard] = React.useState(false)
+  
 
   const handleReset = () => {
     handleLockBoard(true)
@@ -40,6 +41,9 @@ export const Board = () => {
         handleFlip([])
         handleCheckFlipped(0)
         handleLockBoard(false)
+        if(matchedCards.length === 14) {
+          playerWinCallback()
+        }
       } else {
         setTimeout(() => {
           handleFlip([])
