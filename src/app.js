@@ -6,7 +6,7 @@ import { PlayerWin } from './components/PlayerWin/PlayerWin'
 import "./styles.css";
 
 function App() {
-  const [playerWin, handlePlayerWin] = React.useState(false)
+  const [playerWin, handlePlayerWin] = React.useState(true)
   const callback = () => handlePlayerWin(true);
   const gameResetCallback = () => {
     handlePlayerWin(false)
@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       { playerWin ? <PlayerWin gameResetCallback={gameResetCallback}/> : '' }     
-      <Board playerWinCallback={callback}/>
+      <Board playerWin={playerWin} playerWinCallback={callback}/>
       <Title />
     </div>
   );
