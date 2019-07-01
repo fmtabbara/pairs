@@ -23,11 +23,23 @@
 
 .player-win-text {
   position: absolute;
-  top: 100px;
+  top: 75px;
   left: calc(50% - 125px);
   font-family: Impact; 
   font-size: 35px;
   color: rgb(34, 189, 3);
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(9, 53, 5, 0.603);
+}
+
+.player-win-text-bottom {
+  position: absolute;
+  top: 120px;
+  left: calc(50% - 175px);
+  font-family: Impact; 
+  font-size: 18px;
+  color: white;
   font-weight: 600;
   text-transform: uppercase;
   text-shadow: 2px 2px 5px rgba(9, 53, 5, 0.603);

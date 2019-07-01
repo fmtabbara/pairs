@@ -19,7 +19,13 @@ export const PlayerWin = ({gameResetCallback}) => {
   return (
     <div className="player-win-wrapper"  onClick={handleClick}>
      {
-       showWinMessage ? <div className="player-win-text">You Smashed It!</div> : ''
+       showWinMessage ? 
+        (
+          <div> 
+            <div className="player-win-text">You Smashed It!</div>
+            <div className="player-win-text-bottom">Click anywhere and then 'Re-engage' to play</div>
+          </div>
+        ) : ''
      } 
       <Card image={img} flip={flip} callback={()=>{}}/>
     </div>
